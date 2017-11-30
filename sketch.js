@@ -17,7 +17,7 @@ function setup() {
   createCanvas(401, 401);
   cols = floor(width / w);
   rows = floor(height / w);
-  window.console.log(cols);
+  window.console.log(rows);
   grid = make2DArray(cols, rows);
   for (var i = 0; i < cols; i++) {
     for (var j = 0; j < rows; j++) {
