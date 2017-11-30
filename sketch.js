@@ -4,7 +4,7 @@ function make2DArray(cols, rows) {
 	for (var i = 0; i < arr.length; i++) {
 		arr[i] = new Array(rows);
 	}
-	return;
+	return arr;
 }
 
 
@@ -14,18 +14,26 @@ var rows;
 var w = 20;
 
 function setup() {
-	createCanvas(200, 200);
-	cols = floor(width / w);
-	rows = floor(height / w);
-	grid = make2DArray(cols, rows);
+  createCanvas(401, 401);
+  cols = floor(width / w);
+  rows = floor(height / w);
+  window.console.log(cols);
+  grid = make2DArray(cols, rows);
+  for (var i = 0; i < cols; i++) {
+    for (var j = 0; j < rows; j++) {
+      grid[i][j] = new Cell(i, j, w);
+    }
+  }
+
+
+function mousePressed() {
 	for (var i = 0; i < cols; i++) {
 		for (var j = 0; j < rows; j++) {
-			grid[i][j] = new Cell(i , j, w);
+			if(grid[i][j].contains(mouseX, mouseY)){
+				grid[i][j].reveal();
+			}
 		}
 	}
-
-
-
 }
 
 
@@ -37,11 +45,5 @@ function draw() {
 			grid[i][j].show();
 		}
 	}
-
-
-
-
-
-
 }
 
