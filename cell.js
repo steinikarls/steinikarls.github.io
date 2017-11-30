@@ -30,4 +30,8 @@ Cell.prototype.show = function() {
 
 Cell.prototype.contains = function (x, y) {
 	return (x > this.x && x < this.x +this.w && y > this.y && this.y < this.y + this.w);
-}
+};
+
+Cell.prototype.reveal = function() {
+	this.revealed = true;
+};

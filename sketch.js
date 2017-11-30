@@ -24,7 +24,7 @@ function setup() {
       grid[i][j] = new Cell(i, j, w);
     }
   }
-
+}
 
 function mousePressed() {
 	for (var i = 0; i < cols; i++) {
@@ -46,4 +46,5 @@ function draw() {
 		}
 	}
 }
+
 
